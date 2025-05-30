@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+            \includegraphics[width=\textwidth]{/storage/emulated/0/pdf/IMG-20250514-WA0013.png}
+	        \end{minipage} \hfill
+		    \begin{minipage}{0.45\textwidth}
+		            \textbf{Name: Ashok Kumar Reddy K} \\
+			            \textbf{Batch: 2} \\
+				            \textbf{ID: cometfwc016} \\
+					            \textbf{Date: 30th May 2025}
+						        \end{minipage}
+							\end{figure}
+
+							\begin{center}
+							    {\LARGE \textbf{\textcolor{blue}{GATE Question Paper 2010, IN Question Number 42}}}
+							    \end{center}
+
+							    \vspace{1em}
+
+							    \section*{\textcolor{blue}{Question 42 Analysis}}
+
+							    \textbf{Question:}
+
+							    \begin{quote}
+							    The logic gate circuit shown in the figure realizes the function
+							    \end{quote}
+
+							    \begin{figure}[H]
+							        \centering
+								    \includegraphics[width=0.45\textwidth]{/storage/emulated/0/pdf/IMG_20250530_121902.png}
+								    \end{figure}
+
+								    \begin{quote}
+								    (A) XOR \quad (B) XNOR \quad (C) Half adder \quad (D) Full adder
+								    \end{quote}
+
+								    \section*{\textcolor{blue}{Step-by-step Analysis of the Circuit}}
+
+								    Let the inputs be:
+								    \begin{itemize}
+								      \item \textbf{X} and \textbf{Y} (two binary inputs)
+								      \end{itemize}
+
+								      Now examine the circuit:
+
+								      \begin{enumerate}
+								        \item \textbf{Top-left gate (AND):} Input: \(X, Y\) \\
+									  Output = \(X \cdot Y\)
+
+									    \item \textbf{Bottom-left gate (NOR):} Input: \(X, Y\) \\
+									      Output = \(\overline{X + Y}\)
+
+									        \item \textbf{Middle gate (NAND):} Input: \(X, Y\) \\
+										  Output = \(\overline{X \cdot Y}\)
+
+										    \item \textbf{Final gate (OR):} Input: outputs from NOR and NAND gates \\
+										      Output = \(\overline{X + Y} + \overline{X \cdot Y}\)
+										      \end{enumerate}
+
+										      \section*{\textcolor{blue}{Truth Table}}
+
+										      \begin{center}
+										      \begin{tabular}{|c|c|c|c|c|}
+										      \hline
+										      X & Y & $\overline{X + Y}$ & $\overline{X \cdot Y}$ & $Z = \overline{X + Y} + \overline{X \cdot Y}$ \\
+										      \hline
+										      0 & 0 & 1 & 1 & 1 \\
+										      0 & 1 & 0 & 1 & 1 \\
+										      1 & 0 & 0 & 1 & 1 \\
+										      1 & 1 & 0 & 0 & 0 \\
+										      \hline
+										      \end{tabular}
+										      \end{center}
+
+										      This is the \textbf{truth table for XOR}.
+
+										      \section*{\textcolor{blue}{Final Answer}}
+
+										      \textbf{(A) XOR}
+
+										      \section*{\textcolor{blue}{Brief Discussion}}
+
+										      The circuit implements:
+										      \[
+										      Z = \overline{X + Y} + \overline{X \cdot Y}
+										      \]
+										      This matches the behavior of the XOR gate, which outputs 1 only when exactly one of the inputs is 1. Therefore, the circuit realizes the XOR logic function.
+
+										      \end{document}
