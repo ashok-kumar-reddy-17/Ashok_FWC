@@ -1,0 +1,178 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{/storage/emulated/0/pdf/IMG-20250514-WA0013.png} % <-- Use valid image path
+    \end{minipage} \hfill
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Name: Ashok Kumar Reddy K} \\
+        \textbf{Batch: 2} \\
+        \textbf{ID: cometfwc016} \\
+        \textbf{Date: 6th june 2025}
+    \end{minipage}
+\end{figure}
+
+\begin{center}
+    {\LARGE \textbf{\textcolor{blue}{GATE Question Paper 2010, EC Question Number 411}}}
+\end{center}
+
+\vspace{1em}
+
+\section*{\textcolor{blue}{Question 11 Analysis}}
+
+\textcolor{blue}{\textbf{Question:}}
+\begin{quote}
+match the logic gates in \textbf{column A} with equivalent to the \textbf{column 2} 
+\end{quote}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{/storage/emulated/0/pdf/IMG-20250606-WA0029.png} % <-- Use valid image path
+\end{figure}
+
+\begin{quote}
+(A) P-2,Q-4,R-1,S-3 \quad (B) P-4,Q-2.R-1,S-3 \quad 
+(C) P-2,Q-4,R-3,S-1 \quad (D) P-4,Q-2,R-3,S-1
+\end{quote}
+
+\section*{\textcolor{blue}{Truth Tables for Custom Logic Gates}}
+
+\begin{enumerate}
+    \item \textbf{1st Gate:} \quad Output = $\text{NOT}(A \lor B)$
+    \item \textbf{2nd Gate:} \quad Output = $\text{NOT}(A \land B)$
+    \item \textbf{3rd Gate:} \quad Output = $A \oplus B$
+    \item \textbf{4th Gate:} \quad Output = $\text{NOT}(A \oplus B)$
+    \item \textbf{5th Gate:} \quad Output = $A \oplus \text{NOT}(B)$
+    \item \textbf{6th Gate:} \quad Output = $\text{NOT}(A) \lor \text{NOT}(B)$
+    \item \textbf{7th Gate:} \quad Output = $\text{NOT}(\text{NOT}(A) \oplus B)$
+    \item \textbf{8th Gate:} \quad Output = $\text{NOT}(A) \land \text{NOT}(B)$
+\end{enumerate}
+
+\section*{\textcolor{blue}{Truth Tables}}
+
+\begin{multicols}{2}
+\begin{itemize}
+    \item \textbf{1st Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+    1 & 0 & 0 \\
+    1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{2nd Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{3rd Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 0 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{4th Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+    1 & 0 & 0 \\
+    1 & 1 & 1 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{5th Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+    1 & 0 & 0 \\
+    1 & 1 & 1 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{6th Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{7th Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 0 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{8th Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+    1 & 0 & 0 \\
+    1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+\end{itemize}
+\end{multicols}
+
+\section*{\textcolor{blue}{Matching Gate Outputs}}
+
+\begin{itemize}
+    \item 1st == 8th
+    \item 2nd == 6th
+    \item 3rd == 7th
+    \item 4th == 5th 
+\end{itemize}
+\begin{quote}
+    the correct answer is (D) P-4,Q-2,R-3,S-1
+\end{quote}
+\end{document}

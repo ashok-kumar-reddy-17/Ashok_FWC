@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{/storage/emulated/0/pdf/IMG-20250514-WA0013.png} % <-- Use valid image path
+    \end{minipage} \hfill
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Name: Ashok Kumar Reddy K} \\
+        \textbf{Batch: 2} \\
+        \textbf{ID: cometfwc016} \\
+        \textbf{Date: 6th june 2025}
+    \end{minipage}
+\end{figure}
+
+\begin{center}
+    {\LARGE \textbf{\textcolor{blue}{GATE Question Paper 2010, EE Question Number 52}}}
+\end{center}
+
+\vspace{1em}
+
+\section*{\textcolor{blue}{Question 12 Analysis}}
+
+\textcolor{blue}{\textbf{Question:}}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{/storage/emulated/0/pdf/IMG-20250606-WA0030.jpg} % <-- Use valid image path
+\end{figure}
+
+
+\section*{\textcolor{blue}{Karnaugh Map Simplification Problem}}
+
+\textbf{Given:} The following Karnaugh map represents a function $F$:
+
+
+\section*{\textcolor{blue}{Step-by-Step Solution}}
+
+\begin{enumerate}
+    \item \textbf{Identify variables:} 
+    \begin{itemize}
+        \item Let the variables be $X$, $Y$, and $Z$.
+        \item The rows are labeled by $X$, and the columns by $YZ$ in Gray code order: 00, 01, 11, 10.
+    \end{itemize}
+    
+    \item \textbf{Extract minterms:}
+    \begin{itemize}
+        \item From the K-map, 1s appear at: $(X,YZ) = (0,00), (0,01), (0,11), (1,01)$
+        \item Corresponding minterms:
+        \begin{align*}
+        & (0,00) \rightarrow \overline{X}\,\overline{Y}\,\overline{Z} \\
+        & (0,01) \rightarrow \overline{X}\,\overline{Y}\,Z \\
+        & (0,11) \rightarrow \overline{X}\,Y\,Z \\
+        & (1,01) \rightarrow X\,\overline{Y}\,Z
+        \end{align*}
+    \end{itemize}
+
+    \item \textbf{Group minterms in K-map:}
+    \begin{itemize}
+        \item Group 1: $\overline{X}\,\overline{Y}\,\overline{Z} + \overline{X}\,\overline{Y}\,Z = \overline{X}\,\overline{Y}$ (common factor)
+        \item Group 2: $\overline{X}\,Y\,Z + X\,\overline{Y}\,Z = Z\,(\overline{X}\,Y + X\,\overline{Y}) = Z\,(\overline{X \oplus Y})$
+        \item But instead of factoring XOR, observe original terms: we keep $\overline{X}\,Y\,Z$ and $X\,\overline{Y}\,Z$ separate
+    \end{itemize}
+
+    \item \textbf{Final simplified expression:}
+    \[
+    F = \overline{X}\,\overline{Y} + Y\,Z
+    \]
+
+\end{enumerate}
+
+\section*{\textcolor{blue}{Correct Option:}}
+
+\textbf{Option (B):} \quad $F = \overline{X}\,\overline{Y} + YZ$
+
+\end{document}

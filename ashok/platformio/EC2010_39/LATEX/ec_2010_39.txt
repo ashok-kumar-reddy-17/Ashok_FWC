@@ -1,0 +1,142 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{/storage/emulated/0/pdf/IMG-20250514-WA0013.png} % <-- Use valid image path
+    \end{minipage} \hfill
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Name: Ashok Kumar Reddy K} \\
+        \textbf{Batch: 2} \\
+        \textbf{ID: cometfwc016} \\
+        \textbf{Date: 6th june 2025}
+    \end{minipage}
+\end{figure}
+
+\begin{center}
+    {\LARGE \textbf{\textcolor{blue}{GATE Question Paper 2010, EC Question Number 39}}}
+\end{center}
+
+\vspace{1em}
+
+\section*{\textcolor{blue}{Question 39 Analysis}}
+
+\textcolor{blue}{\textbf{Question:}}
+\begin{quote}
+ the Boolean function realized by the logic circuit shown is   
+\end{quote}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{/storage/emulated/0/pdf/IMG-20250609-WA0024.png} % <-- Use valid image path
+\end{figure}
+\begin{enumerate}[label=\Alph*)]
+    \item $\sum m(0,1,3,5,9,10,14)$
+    \item $\sum m(2,3,5,7,8,12,13)$
+    \item $\sum m(1,2,4,5,11,14,15)$
+    \item $\sum m(2,3,4,5,8,9,12)$
+\end{enumerate}
+
+
+\section*{\textcolor{blue}{Solution: Logic Circuit using 4x1 Multiplexer}}
+
+\textbf{Given:} A 4x1 MUX has:
+\begin{itemize}
+  \item Select lines: $A$ and $B$ (Y = Output)
+  \item Inputs: 
+    \begin{align*}
+      I_0 &= C \\
+      I_1 &= D \\
+      I_2 &= \overline{C} \\
+      I_3 &= C \cdot D
+    \end{align*}
+\end{itemize}
+
+\textbf{Recall:} A 4x1 MUX selects one of the four inputs $I_0, I_1, I_2, I_3$ based on select inputs $A$ and $B$ as follows:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+A & B & Selected Input \\
+\hline
+0 & 0 & $I_0$ \\
+0 & 1 & $I_1$ \\
+1 & 0 & $I_2$ \\
+1 & 1 & $I_3$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{\textcolor{blue}{Substitute the Inputs}}
+
+\[
+Y = F(A,B,C,D) =
+\begin{cases}
+C & \text{if } AB = 00 \\
+D & \text{if } AB = 01 \\
+\overline{C} & \text{if } AB = 10 \\
+C \cdot D & \text{if } AB = 11 \\
+\end{cases}
+\]
+
+\section*{\textcolor{blue}{Final Expression}}
+
+\[
+F(A,B,C,D) = A'B'C + A'BD + AB'\overline{C} + ABDC
+\]
+
+\section*{\textcolor{blue}{Minimized SOP (Optional)}}
+
+No further simplification unless Karnaugh map is used — expression already in SOP form.
+
+\textbf{Complete Truth Table:}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c||c|}
+\hline
+A & B & C & D & F(A,B,C,D) \\
+\hline
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 1 & 1 \\
+\hline
+0 & 1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 1 & 1 \\
+\hline
+1 & 0 & 0 & 0 & 1 \\
+1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 1 & 0 & 0 \\
+1 & 0 & 1 & 1 & 0 \\
+\hline
+1 & 1 & 0 & 0 & 1 \\
+1 & 1 & 0 & 1 & 0 \\
+1 & 1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=\Alph*)]
+    \item $\sum m(0,1,3,5,9,10,14)$
+    \item $\sum m(2,3,5,7,8,12,13)$
+    \item $\sum m(1,2,4,5,11,14,15)$
+    \item \textcolor{blue}{$\sum m(2,3,4,5,8,9,12)$ \quad (Correct Answer)}
+\end{enumerate}
+\end{document}

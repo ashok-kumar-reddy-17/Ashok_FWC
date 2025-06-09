@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{booktabs}
+\geometry{margin=1in}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+            \includegraphics[width=\textwidth]{/storage/emulated/0/pdf/IMG-20250514-WA0013.png}
+	        \end{minipage} \hfill
+		    \begin{minipage}{0.45\textwidth}
+		            \textbf{Name: Ashok Kumar Reddy K} \\
+			            \textbf{Batch: 2} \\
+				            \textbf{ID: cometfwc016} \\
+					            \textbf{Date: 6th june 2025}
+						        \end{minipage}
+							\end{figure}
+
+							\begin{center}
+							    {\LARGE \textbf{\textcolor{blue}{GATE Question Paper 2010, PH Question Number 41}}}
+							    \end{center}
+
+							    \vspace{1em}
+							    \begin{center}
+							        \section*{\textcolor{blue}{Logic Circuit Comparison}}
+								\end{center}
+
+
+								\textbf{Question:} For any set of inputs \( A \) and \( B \), the given circuits produce the same output, except one. Which one is it?
+
+								\vspace{1em}
+
+								\begin{enumerate}
+
+								    \item \textbf{(A) Expression: \((A \oplus B) \cdot B'\)}
+
+								        \begin{center}
+									    \begin{tabular}{cccccc}
+									        \toprule
+										    A & B & \( A \oplus B \) & \( B' \) & \( (A \oplus B) \cdot B' \) \\
+										        \midrule
+											    0 & 0 & 0 & 1 & 0 \\
+											        0 & 1 & 1 & 0 & 0 \\
+												    1 & 0 & 1 & 1 & 1 \\
+												        1 & 1 & 0 & 0 & 0 \\
+													    \bottomrule
+													        \end{tabular}
+														    \end{center}
+
+														        \item \textbf{(B) Expression: \( A \cdot B' \)}
+
+															    \begin{center}
+															        \begin{tabular}{ccc}
+																    \toprule
+																        A & B & \( A \cdot B' \) \\
+																	    \midrule
+																	        0 & 0 & 0 \\
+																		    0 & 1 & 0 \\
+																		        1 & 0 & 1 \\
+																			    1 & 1 & 0 \\
+																			        \bottomrule
+																				    \end{tabular}
+																				        \end{center}
+
+																					    \item \textbf{(C) Expression: \( A \cdot B' + B' \cdot A \cdot B \)}
+
+																					        Note that \( B' \cdot A \cdot B = 0 \), since \( B' \cdot B = 0 \). So this simplifies to \( A \cdot B' \), same as (B).
+
+																						    \begin{center}
+																						        \begin{tabular}{cccccc}
+																							    \toprule
+																							        A & B & \( B' \) & \( A \cdot B' \) & \( A \cdot B' \cdot B \) & Result \\
+																								    \midrule
+																								        0 & 0 & 1 & 0 & 0 & 0 \\
+																									    0 & 1 & 0 & 0 & 0 & 0 \\
+																									        1 & 0 & 1 & 1 & 0 & 1 \\
+																										    1 & 1 & 0 & 0 & 0 & 0 \\
+																										        \bottomrule
+																											    \end{tabular}
+																											        \end{center}
+
+																												    \item \textbf{(D) Expression: \( A' + B \)}
+
+																												        \begin{center}
+																													    \begin{tabular}{cccc}
+																													        \toprule
+																														    A & B & \( A' \) & \( A' + B \) \\
+																														        \midrule
+																															    0 & 0 & 1 & 1 \\
+																															        0 & 1 & 1 & 1 \\
+																																    1 & 0 & 0 & 0 \\
+																																        1 & 1 & 0 & 1 \\
+																																	    \bottomrule
+																																	        \end{tabular}
+																																		    \end{center}
+
+																																		    \end{enumerate}
+
+																																		    \vspace{1em}
+
+																																		    \section*{\textcolor{blue}{Conclusion}}
+
+																																		    The outputs of circuits \textbf{(A)}, \textbf{(B)}, and \textbf{(C)} are all the same: \([0, 0, 1, 0]\). \\
+																																		    However, the output of circuit \textbf{(D)} is: \([1, 1, 0, 1]\), which is different.
+
+																																		    \textbf{Therefore, the answer is: (D).}
+
+																																		    \end{document}
