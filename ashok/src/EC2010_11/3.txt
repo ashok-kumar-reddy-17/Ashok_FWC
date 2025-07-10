@@ -1,0 +1,372 @@
+\documentclass[twocolumn]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor, graphicx}
+\usepackage{float, caption}
+\usepackage{geometry}
+\usepackage{array, enumitem}
+\usepackage{cuted, fancyhdr, lmodern, microtype, hyperref, dblfloatfix}
+\geometry{margin=1in}
+
+\pagestyle{empty}
+
+% Apply color to section titles throughout
+\usepackage{sectsty}
+\sectionfont{\color{blue}}
+
+
+\begin{document}
+
+\begin{strip}
+\vspace*{1em}  
+\begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{/storage/emulated/0/pdf/IMG-20250514-WA0013.png}
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}
+    \raggedright
+    \textbf{Name:} Ashok Kumar Reddy K \\
+    \textbf{Batch:} 2 \\
+    \textbf{ID:} cometfwc016 \\
+    \textbf{Date:} 9\textsuperscript{th} July 2025 \\
+    \textbf{Email:} \texttt{kothapalli.fwc1@iiitb.ac.in} \\
+    \textbf{Institute:} IIITB \textendash{} COMET Foundation
+\end{minipage}
+
+\begin{center}
+    {\LARGE \textbf{\textcolor{blue}{GATE Question Paper 2010, EC Question Number 411}}}
+\end{center}
+
+\end{strip}
+
+\vspace{1em}
+
+\section*{\textcolor{blue}{Question 11 Analysis}}
+
+\textcolor{blue}{\textbf{Question:}}
+\begin{quote}
+match the logic gates in \textbf{column A} with equivalent to the \textbf{column 2} 
+\end{quote}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{/storage/emulated/0/pdf/IMG-20250606-WA0029.png} % <-- Use valid image path
+\end{figure}
+
+\begin{quote}
+(A) P-2,Q-4,R-1,S-3 \quad (B) P-4,Q-2.R-1,S-3 \quad 
+(C) P-2,Q-4,R-3,S-1 \quad (D) P-4,Q-2,R-3,S-1
+\end{quote}
+
+\section*{\textcolor{blue}{Truth Tables for Custom Logic Gates}}
+
+\begin{enumerate}
+    \item \textbf{1st Gate:} \quad Output = $\text{NOT}(A \lor B)$
+    \item \textbf{2nd Gate:} \quad Output = $\text{NOT}(A \land B)$
+    \item \textbf{3rd Gate:} \quad Output = $A \oplus B$
+    \item \textbf{4th Gate:} \quad Output = $\text{NOT}(A \oplus B)$
+    \item \textbf{5th Gate:} \quad Output = $A \oplus \text{NOT}(B)$
+    \item \textbf{6th Gate:} \quad Output = $\text{NOT}(A) \lor \text{NOT}(B)$
+    \item \textbf{7th Gate:} \quad Output = $\text{NOT}(\text{NOT}(A) \oplus B)$
+    \item \textbf{8th Gate:} \quad Output = $\text{NOT}(A) \land \text{NOT}(B)$
+\end{enumerate}
+
+\section*{\textcolor{blue}{Truth Tables}}
+
+\begin{itemize}
+    \item \textbf{1st Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+    1 & 0 & 0 \\
+    1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{2nd Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{3rd Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 0 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{4th Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+    1 & 0 & 0 \\
+    1 & 1 & 1 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{5th Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+    1 & 0 & 0 \\
+    1 & 1 & 1 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{6th Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{7th Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 0 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+
+    \item \textbf{8th Gate}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & OUT \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+    1 & 0 & 0 \\
+    1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+\end{itemize}
+
+\section*{\textcolor{blue}{Matching Gate Outputs}}
+
+\begin{itemize}
+    \item 1st == 8th
+    \item 2nd == 6th
+    \item 3rd == 7th
+    \item 4th == 5th 
+\end{itemize}
+\begin{quote}
+    the correct answer is (D) P-4,Q-2,R-3,S-1
+\end{quote}
+
+
+\section*{\textcolor{blue}{Brief Discussion}}
+
+The question involves matching logic gates from **Column A** with equivalent gates from **Column B**. The hardware implementation validates the equivalence of each gate by comparing outputs using LED indicators on an Arduino Uno board.
+
+\section*{\textcolor{blue}{Abstract}}
+
+This project implements four logic gates shown in Column A and verifies their output against equivalent gates in Column B using an Arduino Uno. Each logic gate is recreated using basic gate logic with push-button inputs \( A \) and \( B \). The outputs are displayed using LEDs, enabling direct observation and comparison.
+
+\section*{\textcolor{blue}{Hardware Requirements}}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{S.No} & \textbf{Component} \\ \hline
+1 & Arduino Uno Board \\
+2 & Breadboard \\
+3 & Push Buttons (2) \\
+4 & LEDs (4) \\
+5 & Resistors: 220$\Omega$, 10k$\Omega$ \\
+6 & Jumper Wires \\
+7 & USB Cable \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 1: Arduino Hardware Components}}
+\end{table}
+
+\section*{\textcolor{blue}{Pin Connections}}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Component} & \textbf{Arduino Pin} \\ \hline
+Input A (Button 1) & Digital 2 \\
+Input B (Button 2) & Digital 3 \\
+LED for Gate P Output & Digital 8 \\
+LED for Gate Q Output & Digital 9 \\
+LED for Gate R Output & Digital 10 \\
+LED for Gate S Output & Digital 11 \\
+GND & GND \\
+VCC & 5V \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 2: Pin Mapping for Arduino Uno}}
+\end{table}
+
+\section*{\textcolor{blue}{Upload Steps}}
+
+\begin{enumerate}
+    \item Connect Arduino Uno to mobile using OTG cable.
+    \item Open the ArduinoDroid app.
+    \item Select “Arduino Uno” as board type.
+    \item Paste the sketch to implement each gate logic (NAND, NOR, XOR, etc.).
+    \item Compile and upload the code to Arduino.
+    \item Press input buttons and observe LED outputs.
+\end{enumerate}
+
+\section*{\textcolor{blue}{Observations (Truth Table)}}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+A & B & Gate P  & Gate Q  & Gate R & Gate S\\ \hline
+0 & 0 & 1 & 1 & 0 & 1 \\
+0 & 1 & 0 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1 & 1 & 0 \\
+1 & 1 & 0 & 0 & 0 & 1 \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 3: Logic Gate Output using Arduino LEDs}}
+\end{table}
+
+\section*{\textcolor{blue}{Matching Gates}}
+
+\begin{itemize}
+    \item \textbf{P: NOR} → Gate 1 (OR + NOT)
+    \item \textbf{Q: NAND} → Gate 2 (AND + NOT)
+    \item \textbf{R: XOR} → Gate 3 (Exclusive OR)
+    \item \textbf{S: XNOR} → Gate 4 (NOT of XOR)
+\end{itemize}
+
+\textbf{Correct Option:} \textbf{(D) P-4, Q-2, R-3, S-1}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{/storage/emulated/0/latex/IMG20250606165254.png}
+\end{figure}
+
+\section*{\textcolor{blue}{Conclusion}}
+
+\begin{itemize}
+    \item Each gate in Column A was implemented and tested using Arduino Uno.
+    \item The observed outputs matched the expected behavior of equivalent gates in Column B.
+    \item This confirms the correct matching as: \textbf{P-4, Q-2, R-3, S-1}.
+\end{itemize}
+
+\section*{\textcolor{blue}{Brief Discussion}}
+
+This experiment matches logic gates from Column A to equivalent logic gates in Column B based on their truth tables. The circuit is implemented practically using Raspberry Pi Pico 2 W and 4 LEDs to verify the logic.
+
+\section*{\textcolor{blue}{Abstract}}
+
+This document presents a hardware-based comparison of four logic gates using the Raspberry Pi Pico 2 W board. Each gate from Column A is implemented, and its output is verified using LEDs. The behavior is matched against equivalent gates from Column B, and the experiment confirms the logic gate identities using MicroPython.
+
+\section*{Implementation using Raspberry Pi Pico 2 W}
+
+\textbf{Hardware Requirements:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{S.No} & \textbf{Component} \\ \hline
+1 & Raspberry Pi Pico 2 W \\
+2 & Breadboard \\
+3 & Push Buttons (2) \\
+4 & LEDs (4) \\
+5 & Resistors: 220$\Omega$, 10k$\Omega$ \\
+6 & Jumper Wires \\
+7 & Micro USB Cable \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 1: Pico 2 W Hardware Components}}
+\end{table}
+
+\textbf{Pin Connections:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Component} & \textbf{Pico 2 W Pin} \\ \hline
+Input A (Button 1) & GP14 \\
+Input B (Button 2) & GP15 \\
+LED for Gate P (NOR) & GP10 \\
+LED for Gate Q (NAND) & GP11 \\
+LED for Gate R (XOR) & GP12 \\
+LED for Gate S (XNOR) & GP13 \\
+GND & GND \\
+VCC & 3.3V \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 2: GPIO Pin Mapping for Pico 2 W}}
+\end{table}
+
+\section*{\textcolor{blue}{Upload Steps}}
+
+\begin{enumerate}
+    \item Connect Pico 2 W to mobile via OTG while pressing BOOTSEL.
+    \item Flash MicroPython firmware (.uf2) onto the board.
+    \item Open MicroREPL or uPyCraft on mobile.
+    \item Connect to the Pico 2 W and paste MicroPython logic gate implementation.
+    \item Assemble the circuit on breadboard as per pin mapping.
+    \item Press button inputs and observe LEDs for each gate output.
+\end{enumerate}
+
+\section*{\textcolor{blue}{Observations (Truth Table)}}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{A} & \textbf{B} & Gate P  & Gate Q  & Gate R  & Gate S \\ \hline
+0 & 0 & 1 & 1 & 0 & 1 \\
+0 & 1 & 0 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1 & 1 & 0 \\
+1 & 1 & 0 & 0 & 0 & 1 \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 3: Gate Output on Pico 2 W using LEDs}}
+\end{table}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{/storage/emulated/0/latex/IMG20250604115221.png}
+\end{figure}
+\section*{\textcolor{blue}{Conclusion}}
+
+\begin{itemize}
+    \item Each logic gate in Column A was successfully implemented using Pico 2 W.
+    \item The outputs observed on LEDs matched their equivalent Column B gate behavior.
+    \item Correct matching: \textbf{P-4, Q-2, R-3, S-1} (Option D).
+    \item The Raspberry Pi Pico 2 W setup validated theoretical logic gate behavior through practical observation.
+\end{itemize}
+
+\vspace{1cm}
+\noindent\textbf{GitHub Repository:} \url{https://github.com/ashok-kumar-reddy-17/Ashok_FWC}
+\end{document}
