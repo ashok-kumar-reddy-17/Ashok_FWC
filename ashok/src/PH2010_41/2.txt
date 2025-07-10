@@ -1,0 +1,294 @@
+\documentclass[twocolumn]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor, graphicx}
+\usepackage{float, caption}
+\usepackage{geometry}
+\usepackage{array, enumitem}
+\usepackage{cuted, fancyhdr, lmodern, microtype, hyperref, dblfloatfix}
+\geometry{margin=1in}
+
+\pagestyle{empty}
+
+% Apply color to section titles throughout
+\usepackage{sectsty}
+\sectionfont{\color{blue}}
+
+
+\begin{document}
+
+\begin{strip}
+\vspace*{1em}  
+\begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{/storage/emulated/0/pdf/IMG-20250514-WA0013.png}
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}
+    \raggedright
+    \textbf{Name:} Ashok Kumar Reddy K \\
+    \textbf{Batch:} 2 \\
+    \textbf{ID:} cometfwc016 \\
+    \textbf{Date:} 9\textsuperscript{th} July 2025 \\
+    \textbf{Email:} \texttt{kothapalli.fwc1@iiitb.ac.in} \\
+    \textbf{Institute:} IIITB \textendash{} COMET Foundation
+\end{minipage}
+\begin{center}
+    {\LARGE \textbf{\textcolor{blue}{GATE Question Paper 2010, PH Question Number 41}}}
+\end{center}
+\end{strip}
+
+\vspace{1em}
+
+\begin{center}
+    \section*{\textcolor{blue}{Logic Circuit Comparison}}
+\end{center}
+
+\textbf{Question:} For any set of inputs \( A \) and \( B \), the given circuits produce the same output, except one. Which one is it?
+
+\vspace{1em}
+
+\begin{enumerate}
+    \item \textbf{(A) Expression: \((A \oplus B) \cdot B'\)}
+    
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        A & B & \( A \oplus B \) & \( B' \) & \( (A \oplus B) \cdot B' \) \\
+        \hline
+        0 & 0 & 0 & 1 & 0 \\
+        0 & 1 & 1 & 0 & 0 \\
+        1 & 0 & 1 & 1 & 1 \\
+        1 & 1 & 0 & 0 & 0 \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+    \item \textbf{(B) Expression: \( A \cdot B' \)}
+    
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        A & B & \( A \cdot B' \) \\
+        \hline
+        0 & 0 & 0 \\
+        0 & 1 & 0 \\
+        1 & 0 & 1 \\
+        1 & 1 & 0 \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+    \item \textbf{(C) Expression: \( A \cdot B' + B' \cdot A \cdot B \)}
+    
+    Note that \( B' \cdot A \cdot B = 0 \), since \( B' \cdot B = 0 \). So this simplifies to \( A \cdot B' \), same as (B).
+    
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        A & B & \( B' \) & \( A \cdot B' \) & \( A \cdot B' \cdot B \) & Result \\
+        \hline
+        0 & 0 & 1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 0 & 0 \\
+        1 & 0 & 1 & 1 & 0 & 1 \\
+        1 & 1 & 0 & 0 & 0 & 0 \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+    \item \textbf{(D) Expression: \( A' + B \)}
+    
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        A & B & \( A' \) & \( A' + B \) \\
+        \hline
+        0 & 0 & 1 & 1 \\
+        0 & 1 & 1 & 1 \\
+        1 & 0 & 0 & 0 \\
+        1 & 1 & 0 & 1 \\
+        \hline
+    \end{tabular}
+    \end{center}
+\end{enumerate}
+
+\vspace{1em}
+
+\section*{\textcolor{blue}{Conclusion}}
+
+The outputs of circuits \textbf{(A)}, \textbf{(B)}, and \textbf{(C)} are all the same: \([0, 0, 1, 0]\). \\
+However, the output of circuit \textbf{(D)} is: \([1, 1, 0, 1]\), which is different.
+
+\textbf{Therefore, the answer is: (D).}
+
+\section*{\textcolor{blue}{Brief Discussion}}
+The circuit implements and compares four logic expressions:
+\begin{itemize}
+    \item Expression A: \((A \oplus B) \cdot B'\)
+    \item Expression B: \(A \cdot B'\)
+    \item Expression C: \(A \cdot B' + A \cdot B \cdot B'\) (simplifies to B)
+    \item Expression D: \(A' + B\)
+\end{itemize}
+All expressions except (D) behave identically for inputs \( A, B \). The setup uses LEDs to indicate the output of each expression for real-time validation.
+
+\section*{Abstract}
+This document presents the practical implementation and comparison of four Boolean logic expressions using the Arduino Uno board. It includes hardware requirements, pin mappings, circuit connections, upload steps, and observed results through LED outputs.
+
+\section*{Implementation using Arduino Uno}
+
+\textbf{Hardware Requirements:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{S.No} & \textbf{Component} \\ \hline
+1 & Arduino Uno Board \\
+2 & Breadboard \\
+3 & Push Buttons (2) \\
+4 & LEDs (4) \\
+5 & Resistors: 220$\Omega$, 10k$\Omega$ \\
+6 & Jumper Wires \\
+7 & USB Cable \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 1: Arduino Hardware Components}}
+\end{table}
+
+\textbf{Pin Connections:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Component} & \textbf{Arduino Pin} \\ \hline
+A (Button 1) & Digital 2 \\
+B (Button 2) & Digital 3 \\
+LED for Expr A: \((A \oplus B) \cdot B'\) & Digital 8 \\
+LED for Expr B: \(A \cdot B'\) & Digital 9 \\
+LED for Expr C: \(A \cdot B' + A \cdot B \cdot B'\) & Digital 10 \\
+LED for Expr D: \(A' + B\) & Digital 11 \\
+GND & GND \\
+VCC & 5V \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 2: Pin Mapping for Arduino Uno}}
+\end{table}
+
+\section*{\textcolor{blue}{Upload Steps}}
+\textbf{Upload Steps via Mobile:}
+\begin{enumerate}[label=\arabic*.]
+    \item Connect Arduino Uno to mobile via OTG cable.
+    \item Open the ArduinoDroid app.
+    \item Select "Arduino Uno" from the board list.
+    \item Paste or open the code implementing all 4 logic expressions.
+    \item Tap on "Compile" and then "Upload."
+    \item Assemble the circuit on a breadboard.
+    \item Press button combinations and observe each LED for expression output.
+\end{enumerate}
+
+\section*{\textcolor{blue}{Observations}}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+A & B & Expr A & Expr B & Expr C & Expr D \\ \hline
+0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 0 & 0 & 1 \\
+1 & 0 & 1 & 1 & 1 & 0 \\
+1 & 1 & 0 & 0 & 0 & 1 \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 3: Observed Truth Table using LEDs on Arduino Uno}}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{/storage/emulated/0/latex/IMG20250604115221.png}
+    \caption*{Figure: Hardware setup with expression output LEDs}
+\end{figure}
+
+\section*{\textcolor{blue}{Conclusion}}
+\begin{itemize}
+    \item Expressions A, B, and C behaved identically and gave output high only for input \( A=1, B=0 \).
+    \item Expression D produced high output for all inputs except when \( A=1, B=0 \).
+    \item The Arduino Uno circuit accurately reflected theoretical behavior through visual LED output, validating logic gate design.
+\end{itemize}
+\section*{Implementation using Raspberry Pi Pico 2 W}
+
+\textbf{Hardware Requirements:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{S.No} & \textbf{Component} \\ \hline
+1 & Raspberry Pi Pico 2 W \\
+2 & Breadboard \\
+3 & Push Buttons (2) \\
+4 & LEDs (4) \\
+5 & Resistors: 220$\Omega$, 10k$\Omega$ \\
+6 & Jumper Wires \\
+7 & Micro USB Cable \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 4: Pico 2 W Hardware Components}}
+\end{table}
+
+\textbf{Pin Connections:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Component} & \textbf{Pins} \\ \hline
+A (Button 1) & GP14 \\
+B (Button 2) & GP15 \\
+LED for Expr A: \((A \oplus B) \cdot B'\) & GP13 \\
+LED for Expr B: \(A \cdot B'\) & GP12 \\
+LED for Expr C:\(A \cdot B' + A \cdot B \cdot B'\) & GP11 \\
+LED for Expr D: \(A' + B\) & GP10 \\
+GND & GND \\
+VCC & 3.3V \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 5: GPIO Pin Mapping for Pico 2 W}}
+\end{table}
+
+\section*{\textcolor{blue}{Upload Steps}}
+\textbf{Upload Steps via Mobile:}
+\begin{enumerate}[label=\arabic*.]
+    \item Connect Pico 2 W to mobile using OTG while holding BOOTSEL.
+    \item Copy MicroPython firmware (.uf2) to the board.
+    \item Open the MicroREPL or uPyCraft app on mobile.
+    \item Connect to the Pico 2 W and paste/upload the MicroPython code.
+    \item Assemble the circuit on the breadboard as per the pin mapping.
+    \item Press the buttons to test all logic expressions through LED outputs.
+\end{enumerate}
+
+\section*{\textcolor{blue}{Observations}}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{A} & \textbf{B} & Expr A & Expr B & Expr C & Expr D \\ \hline
+0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 0 & 0 & 1 \\
+1 & 0 & 1 & 1 & 1 & 0 \\
+1 & 1 & 0 & 0 & 0 & 1 \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 6: Observed Truth Table on Pico 2 W}}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{/storage/emulated/0/latex/IMG20250604114948.png}
+    \caption*{Figure: Circuit connected to Raspberry Pi Pico 2 W with 4 LED outputs}
+\end{figure}
+
+\section*{\textcolor{blue}{Conclusion}}
+\begin{itemize}
+    \item The Raspberry Pi Pico 2 W was successfully used to implement and verify all four Boolean expressions.
+    \item Expressions A, B, and C produced identical outputs, while Expression D differed.
+    \item The experiment confirms theoretical logic through practical validation using MicroPython on Pico 2 W.
+\end{itemize}
+
+\vspace{1cm}
+\noindent\textbf{GitHub Repository:} \url{https://github.com/ashok-kumar-reddy-17/Ashok_FWC}
+\end{document}

@@ -1,0 +1,255 @@
+\documentclass[twocolumn]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor, graphicx}
+\usepackage{float, caption}
+\usepackage{geometry}
+\usepackage{array, enumitem}
+\usepackage{cuted, fancyhdr, lmodern, microtype, hyperref, dblfloatfix}
+\geometry{margin=1in}
+
+\pagestyle{empty}
+
+% Apply color to section titles throughout
+\usepackage{sectsty}
+\sectionfont{\color{blue}}
+
+
+\begin{document}
+
+\begin{strip}
+\vspace*{1em}  
+\begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{/storage/emulated/0/pdf/IMG-20250514-WA0013.png}
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}
+    \raggedright
+    \textbf{Name:} Ashok Kumar Reddy K \\
+    \textbf{Batch:} 2 \\
+    \textbf{ID:} cometfwc016 \\
+    \textbf{Date:} 9\textsuperscript{th} July 2025 \\
+    \textbf{Email:} \texttt{kothapalli.fwc1@iiitb.ac.in} \\
+    \textbf{Institute:} IIITB \textendash{} COMET Foundation
+\end{minipage}
+\begin{center}
+    {\LARGE \textbf{\textcolor{blue}{GATE Question Paper 2010, IN Question Number 42}}}
+\end{center}
+\end{strip}
+\
+\vspace{1em}
+
+% Question Description
+\section*{\textcolor{blue}{Question 42 Analysis}}
+\textbf{Question:}
+\begin{quote}
+The logic gate circuit shown in the figure realizes the function:
+\end{quote}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{/storage/emulated/0/pdf/IMG_20250530_121902.png}
+\end{figure}
+
+\begin{quote}
+(A) XOR \quad (B) XNOR \quad (C) Half Adder \quad (D) Full Adder
+\end{quote}
+
+% Circuit Explanation
+\section*{\textcolor{blue}{Step-by-Step Analysis of the Circuit}}
+
+Let the inputs be:
+\begin{itemize}
+    \item \textbf{X} and \textbf{Y} (two binary inputs)
+\end{itemize}
+
+Circuit Analysis:
+\begin{enumerate}
+    \item \textbf{Top-left gate (AND):}  
+    Inputs: \(X, Y\)  
+    Output: \(X \cdot Y\)
+
+    \item \textbf{Bottom-left gate (NOR):}  
+    Inputs: \(X, Y\)  
+    Output: \(\overline{X + Y}\)
+
+    \item \textbf{Middle gate (NAND):}  
+    Inputs: \(X, Y\)  
+    Output: \(\overline{X \cdot Y}\)
+
+    \item \textbf{Final gate (OR):}  
+    Inputs: outputs from NOR and NAND  
+    Output: \(\overline{X + Y} + \overline{X \cdot Y}\)
+\end{enumerate}
+
+% Truth Table
+\section*{\textcolor{blue}{Truth Table}}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+X & Y & $\overline{X + Y}$ & $\overline{X \cdot Y}$ & $Z = \overline{X + Y} + \overline{X \cdot Y}$ \\
+\hline
+0 & 0 & 1 & 1 & 1 \\
+0 & 1 & 0 & 1 & 1 \\
+1 & 0 & 0 & 1 & 1 \\
+1 & 1 & 0 & 0 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+This is the \textbf{truth table for XOR}.
+
+% Final Answer
+\section*{\textcolor{blue}{Final Answer}}
+\textbf{(A) XOR}
+
+% Brief Discussion
+\section*{\textcolor{blue}{Brief Discussion}}
+The circuit implements:
+\[
+Z = \overline{X + Y} + \overline{X \cdot Y}
+\]
+This expression matches the behavior of the XOR gate, which outputs 1 only when exactly one of the inputs is 1.  
+Hence, the circuit realizes the XOR logic function.
+\section*{Abstract}
+This document presents the practical implementation of an XOR logic gate using both Arduino Uno and Raspberry Pi Pico W boards. It includes hardware requirements, pin mappings, connection diagrams, mobile upload steps, and testing results.
+
+\section*{Implementation using Arduino Uno}
+
+\textbf{Hardware Requirements:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{S.No} & \textbf{Component} \\ \hline
+1 & Arduino Uno Board \\
+2 & Breadboard \\
+3 & Push Buttons (2) \\
+4 & LED \\
+5 & Resistors: 220$\Omega$, 10k$\Omega$ \\
+6 & Jumper Wires \\
+7 & USB Cable \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 1: Arduino Hardware Components}}
+\end{table}
+
+\textbf{Pin Connections:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Component} & \textbf{Arduino Pin} \\ \hline
+X (Button 1) & Digital 2 \\
+Y (Button 2) & Digital 3 \\
+LED Output & Digital 13 \\
+GND & GND \\
+VCC & 5V \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 2: Pin Mapping for Arduino Uno}}
+\end{table}
+\section*{\textcolor{blue}{Upload Steps}}
+\textbf{Upload Steps via Mobile:}
+\begin{enumerate}[label=\arabic*.]
+    \item Connect Arduino Uno to mobile via OTG.
+    \item Open ArduinoDroid app.
+    \item Select the correct board and paste the code.
+    \item Compile and Upload the code.
+    \item Assemble the circuit on a breadboard.
+    \item Verify LED output by pressing buttons.
+\end{enumerate}
+
+\section*{\textcolor{blue}{Observations}}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+X & Y & LED Output \\ \hline
+0 & 0 & OFF \\
+0 & 1 & ON \\
+1 & 0 & ON \\
+1 & 1 & OFF \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 3: XOR Truth Table on Arduino}}
+\end{table}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{/storage/emulated/0/latex/IMG20250606165308.png}
+\end{figure}
+\section*{\textcolor{blue}{Conclusion}} The circuit worked as expected for XOR operation using Arduino Uno.
+
+\section*{Implementation using Raspberry Pi Pico W}
+
+\textbf{Hardware Requirements:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{S.No} & \textbf{Component} \\ \hline
+1 & Raspberry Pi Pico W \\
+2 & Breadboard \\
+3 & Push Buttons (2) \\
+4 & LED \\
+5 & Resistors: 220$\Omega$, 10k$\Omega$ \\
+6 & Jumper Wires \\
+7 & Micro USB Cable \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 4: Pico W Hardware Components}}
+\end{table}
+
+\textbf{Pin Connections:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Component} & \textbf{Pico W Pin} \\ \hline
+X (Button 1) & GP14 \\
+Y (Button 2) & GP15 \\
+LED Output & GP13 \\
+GND & GND \\
+VCC & 3.3V \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 5: GPIO Pin Mapping for Pico W}}
+\end{table}
+\section*{\textcolor{blue}{Upload Steps}}
+\textbf{Upload Steps via Mobile:}
+\begin{enumerate}[label=\arabic*.]
+    \item Connect Pico W to mobile using OTG while pressing BOOTSEL.
+    \item Copy MicroPython firmware (.uf2) to the board.
+    \item Open MicroREPL app.
+    \item Connect to Pico and paste the MicroPython code.
+    \item Connect the circuit.
+    \item Test functionality using buttons.
+\end{enumerate}
+
+\section*{\textcolor{blue}{Observations}}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+X & Y & LED Output \\ \hline
+0 & 0 & OFF \\
+0 & 1 & ON \\
+1 & 0 & ON \\
+1 & 1 & OFF \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 6: XOR Truth Table on Pico W}}
+\end{table}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{/storage/emulated/0/latex/IMG20250606164943.png}
+\end{figure}
+\section*{\textcolor{blue}{Conclusion}}
+The circuit worked as expected for XOR operation using Arduino Uno.
+
+
+\vspace{1cm}
+\noindent\textbf{GitHub Repository:} \url{https://github.com/ashok-kumar-reddy-17/Ashok_FWC}
+
+
+\end{document}
