@@ -1,0 +1,258 @@
+\documentclass[twocolumn]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor, graphicx}
+\usepackage{float, caption}
+\usepackage{geometry}
+\usepackage{array, enumitem}
+\usepackage{cuted}
+\geometry{margin=1in}
+\usepackage{lmodern}     
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+\usepackage{microtype}     
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{strip}
+\vspace*{1em}  
+\begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{/storage/emulated/0/pdf/IMG-20250514-WA0013.png}
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}
+    \raggedright
+    \textbf{Name:} Ashok Kumar Reddy K \\
+    \textbf{Batch:} 2 \\
+    \textbf{ID:} cometfwc016 \\
+    \textbf{Date:} 9\textsuperscript{th} July 2025 \\
+    \textbf{Email:} \texttt{kothapalli.fwc1@iiitb.ac.in} \\
+    \textbf{Institute:} IIITB \textendash{} COMET Foundation
+\end{minipage}
+
+
+\begin{center}
+    {\LARGE \textbf{\textcolor{blue}{GATE Question Paper 2010, EE Question Number 52}}}
+\end{center}
+\end{strip}
+
+\section*{\textcolor{blue}{Question 12 Analysis}}
+\textcolor{blue}{\textbf{Question:}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{/storage/emulated/0/pdf/IMG-20250606-WA0030.png}
+\end{figure}
+
+\section*{\textcolor{blue}{Karnaugh Map Simplification Problem}}
+\textbf{Given:} The following Karnaugh map represents a function $F$:
+
+\section*{\textcolor{blue}{Step-by-Step Solution}}
+\begin{enumerate}
+    \item \textbf{Identify variables:}
+    \begin{itemize}
+        \item Variables: $X$, $Y$, $Z$
+        \item Columns in Gray code: 00, 01, 11, 10
+    \end{itemize}
+
+    \item \textbf{Extract minterms:}
+    \begin{itemize}
+        \item 1s at: $(0,00), (0,01), (0,11), (1,01)$
+        \item Minterms:
+        \begin{align*}
+            & (0,00) \rightarrow \overline{X}\,\overline{Y}\,\overline{Z} \\
+            & (0,01) \rightarrow \overline{X}\,\overline{Y}\,Z \\
+            & (0,11) \rightarrow \overline{X}\,Y\,Z \\
+            & (1,01) \rightarrow X\,\overline{Y}\,Z
+        \end{align*}
+    \end{itemize}
+
+    \item \textbf{Group minterms:}
+    \begin{itemize}
+        \item Group 1: $\overline{X}\,\overline{Y}$
+        \item Group 2: $\overline{X}\,Y\,Z + X\,\overline{Y}\,Z = YZ$
+    \end{itemize}
+
+    \item \textbf{Final Expression:}
+    \[
+        F = \overline{X}\,\overline{Y} + YZ
+    \]
+\end{enumerate}
+
+\section*{\textcolor{blue}{Correct Option:}}
+\textbf{Option (B):} $F = \overline{X}\,\overline{Y} + YZ$
+
+\section*{\textcolor{blue}{Implementation using the Arduino Board}}
+
+\section*{\textcolor{blue}{Abstract}}
+This project implements the logic expression using Arduino Uno. Inputs are given via push buttons, and output shown on an LED.
+
+\section*{\textcolor{blue}{Hardware Requirements}}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{S.No} & \textbf{Component} \\ \hline
+1 & Arduino Uno Board \\
+2 & Breadboard \\
+3 & Push Buttons (X, Y, Z) \\
+4 & LED \\
+5 & Resistors: 220$\Omega$, 10k$\Omega$ \\
+6 & Jumper Wires \\
+7 & USB Cable \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 1: Hardware Components}}
+\end{table}
+
+\section*{\textcolor{blue}{Pin Connections}}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Component} & \textbf{Arduino Pin} \\ \hline
+X & Digital 2 \\
+Y & Digital 3 \\
+Z & Digital 4 \\
+F (LED) & Digital 13 \\
+GND & GND \\
+VCC & 5V \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 2: Pin Configuration}}
+\end{table}
+
+\section*{\textcolor{blue}{Karnaugh Map Representation}}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.2}
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+X $\backslash$ YZ & 00 & 01 & 11 & 10 \\ \hline
+0 & 1 & 1 & 1 & 0 \\
+1 & 0 & 1 & 0 & 0 \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 3: Karnaugh Map}}
+\end{table}
+
+\section*{\textcolor{blue}{Upload Steps}}
+\begin{enumerate}[label=\arabic*.]
+    \item Connect the Arduino board to your mobile using an OTG cable
+    \item Open the ArduinoDroid app on your mobile
+    \item Select the correct board and port settings
+    \item Write or paste the Arduino code in the app
+    \item Compile and upload the code directly from your mobile
+    \item Assemble the circuit as per the schematic
+    \item Test the LED output based on the input conditions
+\end{enumerate}
+
+
+\section*{\textcolor{blue}{Observations}}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|}
+\hline
+X & Y & Z & F (LED) \\ \hline
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 4: Truth Table}}
+\end{table}
+
+\includegraphics[width=0.45\textwidth]{/storage/emulated/0/pdf/IMG20250606165024.png}
+
+\section*{\textcolor{blue}{Conclusion}}
+Arduino-based logic verification confirms the function $F = \overline{X}\,\overline{Y} + YZ$ with real-time input testing.
+
+\section*{\textcolor{blue}{Implementation using Pico W}}
+
+\section*{\textcolor{blue}{Abstract}}
+This part replicates the same logic on Raspberry Pi Pico W using MicroPython via Thonny IDE.
+
+\section*{\textcolor{blue}{Hardware Requirements}}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|l|}
+\hline
+\textbf{S.No} & \textbf{Component} \\ \hline
+1 & Raspberry Pi Pico W \\
+2 & Breadboard \\
+3 & Push Buttons (X, Y, Z) \\
+4 & LED \\
+5 & Resistors: 220$\Omega$, 10k$\Omega$ \\
+6 & Jumper Wires \\
+7 & Micro USB Cable \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 1: Hardware Components}}
+\end{table}
+
+\section*{\textcolor{blue}{Pin Connections}}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Component} & \textbf{Pico W Pin} \\ \hline
+X & GP14 \\
+Y & GP15 \\
+Z & GP16 \\
+F (LED) & GP13 \\
+GND & GND \\
+VCC & 3.3V \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 2: GPIO Pin Config}}
+\end{table}
+
+\section*{\textcolor{blue}{Upload Steps}}
+\begin{enumerate}[label=\arabic*.]
+    \item Connect the Raspberry Pi Pico W to your mobile using an OTG cable
+    \item Flash the MicroPython firmware (.uf2) by holding BOOTSEL and copying it to the RPI-RP2 drive
+    \item Open the MicroREPL app on your mobile
+    \item Connect to the Pico W via the MicroREPL serial interface
+    \item Write or paste the MicroPython code and run it directly from the app
+    \item Connect the hardware circuit as required
+    \item Test the output based on your program
+\end{enumerate}
+
+\section*{\textcolor{blue}{Observations}}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|}
+\hline
+X & Y & Z & F (LED) \\ \hline
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\caption*{\textbf{Table 4: Truth Table}}
+\end{table}
+
+\includegraphics[width=0.45\textwidth]{/storage/emulated/0/pdf/IMG20250606164931.png}
+
+\section*{\textcolor{blue}{Conclusion}}
+The logic function was successfully tested on Pico W using MicroPython and validated with real input/output.
+
+
+\vspace{1cm}
+\noindent\textbf{GitHub Repository:} \url{https://github.com/ashok-kumar-reddy-17/Ashok_FWC}
+
+
+\end{document}
